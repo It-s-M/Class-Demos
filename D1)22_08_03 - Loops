@@ -1,0 +1,138 @@
+//package Wednesday;
+
+import java.util.Scanner;
+
+public class FlowControl {
+    public static void main(String [] args) {
+        // we have to be 60 inches or taller to ride the roller coaster
+        int height = 70;
+        int age = 20;
+        int threshold = 60;
+
+        // condition in ()
+        // what happens based on that condition goes in {}
+        if(height > threshold) {
+            // notice the indendation, everything in this if-block is pushed a little more
+            System.out.println("You can ride the roller coaster");
+        }
+        else if(age >= 18) {
+            System.out.println("You're an adult, ride at your own risk.");
+        }
+        // if none of the conditions trigger, then the else statement will
+        else {
+            System.out.println("You cannot ride the roller coaster");
+        }
+
+        // imagine we don't have an else statement
+        if(height > threshold) {
+            System.out.println("You can ride.");
+        }
+        // if we can't do else, we have to take the opposite of the previous if-statement
+        if (height <= threshold) {
+            System.out.println("You can't ride.");
+        }
+
+        // we can us boolean operators to ensure 2 conditions are true before the code is executed
+        if(age >= 18 && height > threshold) {
+            System.out.println("You are perfectly safe");
+        }
+
+        // Let's say we want to count to 10 in our code:
+        // why is this bad code?
+        // DRY - Don't Repeat Yourself
+        System.out.println(1);
+        System.out.println(2);
+        System.out.println(3);
+        System.out.println(4);
+        System.out.println(5);
+        System.out.println(6);
+        System.out.println(7);
+        System.out.println(8);
+        System.out.println(9);
+        System.out.println(10);
+
+        System.out.println();
+        
+        int counter = 1;
+        // while our counter is less than 11:
+        while(counter < 101) {
+            System.out.println(counter);
+            counter ++;
+        }
+
+        System.out.println();
+
+        // While loops don't have to be numeric, they can rely on user input, etc.
+        Scanner scanner = new Scanner(System.in);
+        boolean flag = true;
+
+        while(flag) {
+            System.out.print("Enter an animal: ");
+            String animal = scanner.nextLine();
+            System.out.println(animal);
+
+            if(animal.contains("aardvark")) {
+                flag = false;   //this will stop the loop
+            }
+        }
+
+        System.out.println("Congratulations! \n You guessed the correct animal!");
+
+
+        System.out.println();
+
+
+        for(int i = 0; i < 20; i ++) {      //we're going from 0 to 20
+            System.out.println(i);
+        }
+
+        
+        System.out.println();
+
+
+        for(int i = 0; i < 10; i ++) {
+            if (i % 2 == 0) {
+            System.out.println("Even!");
+            }
+        }
+
+
+        System.out.println();
+
+
+        for(int i = 0; i < 10; i ++) {      // special loop statements
+            if(i % 2 == 0) {
+                System.out.println("Even!");
+                 continue;      // continue means go on to the next one after this one
+            }
+            System.out.println(i); 
+        }
+
+
+        System.out.println();
+
+
+
+        for(int i = 0; i < 20; i ++) {
+            if (i == 13) {
+                break;      //if i = 13, we will skip 13
+            }
+            System.out.println(i);
+        }
+
+
+        System.out.println();
+
+
+        for(int i = 0; i < 10; i ++) {
+            for(int j = 0; j < 10; j ++) {
+                System.out.println(i + " " + j);
+                if(j == 7) {        //this only breaks out of the inner loop, but the outer loop 
+                                 //will continue to itterate, so the outerloop will go from
+                    break;      //1 to 9 and for the outerloop only the numbers 1 - 6 will 
+                }              //be printed
+            }
+        }
+
+    }
+}
