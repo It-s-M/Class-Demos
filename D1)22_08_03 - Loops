@@ -133,6 +133,21 @@ public class FlowControl {
                 }              //be printed
             }
         }
+        
+        
+        
+
+        System.out.println();
+
+
+        for(int i = 0; i < 10; i ++) {
+            for(int j = 0; j < 10; j ++) {
+                if(j == 7) {        //this only breaks out of the inner loop, but the outer loop 
+                    break;         //will continue to itterate, so the outerloop will go from
+                }                 //1 to 9 and for the outerloop only the numbers 1 - 6 will 
+            System.out.println(i + " " + j);      //be printed
+            }
+        }
 
     }
 }
