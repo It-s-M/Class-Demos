@@ -1,0 +1,26 @@
+https://code.sololearn.com/cwMzf4dB423a
+//package Wednesday;
+
+import java.util.Scanner;
+
+public class FlowControl3 {
+    public static void main(String[] args) {
+
+        char c = 'a';
+        switch(c) {
+            case 'a':
+                System.out.println("apple");
+                break;
+            case 'b':
+                System.out.println("banana");
+        }
+
+        String name = "mike";
+        switch(name) {
+            case "mike":
+                System.out.println("Your name is Mike");
+        }
+
+
+    }
+}
