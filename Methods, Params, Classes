@@ -1,0 +1,122 @@
+D3) 22.08.03 Pet Class    https://code.sololearn.com/crcLQaPnm2H4
+public class Pet{
+    float weight;
+    int age;
+    String sound;
+    String petType;
+    String name;
+    String owner;
+
+    // Methods:
+
+    
+    void speak() {
+        System.out.println(/*this.*/sound); //what does it do without the keyword this
+    }
+
+    
+    int getAge() {
+        return /*this.*/age;
+    }
+
+    
+    void eat(int consumption) {
+        System.out.println(name + " eats " + consumption + " ounces of food");
+    }
+
+    // Constructors:
+    // default constructor (no arguments):
+    public Pet() {
+        // since we have no values being passed in, we can just set up some default values:
+        this.name = "default name";
+        this.petType = "default petType";
+        this.age = 0;
+        this.owner = "default owner";
+        this.weight = 15;
+        this.sound = "default sound";
+    }
+
+    // another constructor, this time with parameters (input)
+    public Pet(int eyes, String petType, int age, String owner, float weight, String sound) {
+        // in the body, we take the parameters and assign them to the instance:
+        this.name = name;
+        this.petType = petType;
+        this.age = age;
+        this.owner = owner;
+        this.weight = weight;
+        this.sound = sound;
+    }
+
+}
+
+
+
+
+
+
+
+D4) 22.08.03 Pet Description  https://code.sololearn.com/ci514w5Z69IY
+//package Wednesday.PetExample;
+
+// Main is a simpler class that allows to instantiate our pets
+public class PetStore {
+    public static void main(String[] args) {
+        System.out.println("Here is where all of our pets will be");
+
+        // when we make a new object, we use the "new" keyword
+        // Here we use the default constructor (no args) before we even defined
+        // a default constructor:
+        Pet pet1 = new Pet();
+        // This is normally bad form, editing the properties directly
+        // Later, we'll see how we can set up methods to safely interact with the variables
+        pet1.name = "Ashes";
+        pet1.petType = "cat";
+        pet1.owner = "Rory";
+        pet1.weight = 14.5f;
+        pet1.age = 12;
+        pet1.sound = "meow";
+
+        Pet pet2 = new Pet();
+        pet2.name = "Scooby Doo";
+        pet2.petType = "dog";
+        pet2.owner = "Shaggy";
+        pet2.weight = 45;
+        pet2.age = 8;
+        pet2.sound = "ruh-roh";
+
+        System.out.println("My name is " + pet1.name);
+        System.out.println("My owner is " + pet1.owner);
+        System.out.println("I am a " + pet1.petType);
+        System.out.println("I am" pet1.age + " years  old.");
+        System.out.println("I say " + pet1.sound);
+
+        System.out.println("My name is " + pet2.name);
+        System.out.println("My owner is " + pet2.owner);
+        System.out.println("I am a " + pet2.petType);
+        System.out.println("I am" pet2.age + " years  old.");
+        System.out.println("I say " + pet2.sound);
+
+        pet1.speak();
+        pet2.speak();
+
+
+        pet1.eat(12);
+        pet2.eat(32);
+
+        System.out.println(pet1.getAge());
+        System.out.println(pet2.getAge());
+
+        // Creating a pet without actually assigning its variables:
+        Pet pet3 = new Pet();
+        pet3.speak();
+        pet3.eat(4);
+        System.out.println(pet3.getAge());
+
+        // Use our parameterized constructor
+        Pet pet4 = new Pet("Garfield", "cat", age, "John", weight,"Meow");
+        pet4.speak();
+        pet4.eat(16);
+        System.out.println(pet4.getAge());
+
+    }
+}
